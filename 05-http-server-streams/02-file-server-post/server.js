@@ -54,7 +54,7 @@ function receiveFile(filepath, req, res) {
 
   res.on('close', () => {
     if (!res.finished) {
-      fs.unlink(filepath, () => {});
+      fs.unlink(filepath, EMPTY_FN);
     }
   });
 }
